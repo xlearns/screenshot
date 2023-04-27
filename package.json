@@ -1,0 +1,26 @@
+{
+  "name": "screenshot",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev-dom": "serve ./dom-to-image -p 5173",
+    "dev-html": "serve ./html2canvas -p 5173",
+    "dev-puppeteer": "serve ./puppeteer/fe -p 5173",
+    "serve-puppeteer": "nodemon ./puppeteer/serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "dom-to-image": "^2.6.0",
+    "express": "^4.18.2",
+    "html2canvas": "^1.4.1",
+    "nodemon": "^2.0.22",
+    "puppeteer": "^19.11.1"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

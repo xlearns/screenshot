@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+     <div>
+      url: <input v-model="data" style="margin-right:20px;display: inline-block;height:60px;width:400px;" />
+     </div>
+     <div style="margin-top: 15px;">
+      token : <input placeholder="key" v-model="token.k" style="margin-right:20px;display: inline-block;height:40px;width:100px;" /> <input placeholder="value" v-model="token.v" style="margin-right:20px;display: inline-block;height:40px;width:100px;" />
+     </div>
+      <button @click="transfrom" style="margin-top: 15px;">conme on</button>
+      <div style="margin-top:20px" v-if="sclick">
+        <span v-if="loading">加载中</span>
+        <img v-else :src='img'>
+      </div>
+   </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    const app = {
+    setup(){
+      const state = Vue.reactive({
+        img:'',
+        data:"",
+        sclick:false,
+        loading:false,
+        token:{}
+      })
+      function transfrom(){
+        state.loading = true
+        state.sclick = true
+
+        fetch('http://localhost:3000/api/screenshot', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ token: state.token, url: state.data })
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(buffer => {
+          const blob = new Blob([buffer], { type: "image/png" })
+          const url = URL.createObjectURL(blob);
+          state.img = url
+          state.loading = false
+        })
+      }
+      return {
+        transfrom,
+        ...Vue.toRefs(state)
+      }
+    }
+  };
+  Vue.createApp(app).mount('#app')
+  </script>
+</body>
+</html>

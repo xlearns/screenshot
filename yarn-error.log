@@ -1,0 +1,61 @@
+Arguments: 
+  /root/.nvm/versions/node/v16.16.0/bin/node /mnt/d/nodejs/node_global/node_modules/yarn/bin/yarn.js add libatk-1.0.so.0 -D
+
+PATH: 
+  /root/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/root/.nvm/versions/node/v16.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/d/Git/cmd:/mnt/d/wanxin/script/:/mnt/d/nvm/nvm:/mnt/d/node:/mnt/d/wanxin/nvm:/mnt/c/Program Files/nodejs:/mnt/d/python:/mnt/d/Go/bin:/mnt/c/Users/Garbrielle/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/d/nodejs/node_global:/mnt/c/Users/Garbrielle/AppData/Local/Programs/Fiddler:/mnt/c/Users/Garbrielle/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Garbrielle/go/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.npmjs.org/libatk-1.0.so.0: Not found
+      at Request.params.callback [as _callback] (/mnt/d/nodejs/node_global/node_modules/yarn/lib/cli.js:66138:18)
+      at Request.self.callback (/mnt/d/nodejs/node_global/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/mnt/d/nodejs/node_global/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (/mnt/d/nodejs/node_global/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "screenshot",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+      "dev-dom": "serve ./dom-to-image -p 5173",
+      "dev-html": "serve ./html2canvas -p 5173",
+      "dev-puppeteer": "serve ./puppeteer/fe -p 5173",
+      "serve-puppeteer": "nodemon ./puppeteer/serve"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "body-parse": "^0.1.0",
+      "cors": "^2.8.5",
+      "dom-to-image": "^2.6.0",
+      "express": "^4.18.2",
+      "html2canvas": "^1.4.1",
+      "nodemon": "^2.0.22",
+      "puppeteer": "^19.11.1"
+    },
+    "dependencies": {
+      "serve": "^14.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
