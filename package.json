@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev-dom": "serve ./dom-to-image -p 5173",
-    "dev-html": "serve ./html2canvas -p 5173",
-    "dev-puppeteer": "serve ./puppeteer/fe -p 5173",
+    "dev-dom": "serve ./dom-to-image -p 51730",
+    "dev-html": "serve ./html2canvas -p 51730",
+    "dev-puppeteer": "serve ./puppeteer/fe -p 51730",
     "serve-puppeteer": "nodemon ./puppeteer/serve"
   },
   "keywords": [],
